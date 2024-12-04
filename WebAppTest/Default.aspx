@@ -75,7 +75,7 @@
 
         th {
             background-color: #04AA6D;
-            color: white;
+            color: white; 
         }
     </style>
 
