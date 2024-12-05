@@ -24,57 +24,48 @@ namespace WebAppTest
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// LabelMan control.
+        /// LabelManPris control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelMan;
+        protected global::System.Web.UI.WebControls.Label LabelManPris;
 
         /// <summary>
-        /// LabelTir control.
+        /// LabelTirPris control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelTir;
+        protected global::System.Web.UI.WebControls.Label LabelTirPris;
 
         /// <summary>
-        /// LabelOns control.
+        /// LabelOnsPris control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelOns;
+        protected global::System.Web.UI.WebControls.Label LabelOnsPris;
 
         /// <summary>
-        /// LabelTor control.
+        /// LabelTorPris control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelTor;
+        protected global::System.Web.UI.WebControls.Label LabelTorPris;
 
         /// <summary>
-        /// LabelFre control.
+        /// LabelFrePris control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelFre;
-
-        /// <summary>
-        /// GridView1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.Label LabelFrePris;
     }
 }

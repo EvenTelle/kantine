@@ -4,62 +4,67 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Kantine</title>
     <style>
+        body {
+            margin: 0;
+            height: 100vh;
+        }
+        
 
-
- body{
-    margin: 0;
-    height: 1000hv;
-    
-}
         h1 {
-            font-family: Arial, Helvetica, sans-serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            text-align: center;
+            margin-bottom: 20px;
+            color: black;
         }
 
-        meny{
+        meny {
             display: flex;
-            align-items: center;
             justify-content: center;
-}
-
+            align-items: center;
+        }
 
         section {
             display: flex;
             flex-direction: column;
             align-items: center;
-            background-color: blue;
+            background: white;
+            border: 1px solid black;
             height: 400px;
             width: 100%;
             margin: 30px;
+            border-radius: 20px;
         }
 
         article {
             display: flex;
-            align-items: center;
             justify-content: center;
-            background-color: white;
+            align-items: center;
+            background: green;
             height: 150px;
             width: 200px;
             margin-top: 10px;
+            border-radius: 20px;
         }
 
-        article img {
-                max-width: 100%;
-                max-height: 100%;
+            article img {
+                width: 100%;
+                height: 100%;
                 object-fit: cover;
-        }
+            }
+
 
         p {
-            margin: 10px 0 0 0;
-            color: white;
+            margin: 10px 0 0;
+            color: black;
             font-family: Arial, sans-serif;
         }
 
-        table {
+        .alleVarer {
+        }
+
+
+        /*table {
             border-collapse: collapse;
             width: 100%;
         }
@@ -76,13 +81,14 @@
         th {
             background-color: #04AA6D;
             color: white; 
-        }
+        }*/
     </style>
 
 
 </head>
 <body>
     <form id="form1" runat="server">
+
 
         <h1>Meny</h1>
 
@@ -91,58 +97,76 @@
             <section>
                 <article>
 
-                    <img src="img/mandag - Copy.jpg">
+                    <!--<img src="img/mandag - Copy.jpg">-->
 
                 </article>
-                <p>mandag</p>
+                <p>Mandag</p>
 
-                <p>Pris: <asp:Label ID="LabelMan" runat="server" Text=""></asp:Label></p>
+                <p>
+                    Pris:
+                    <asp:Label ID="LabelManPris" runat="server" Text=""></asp:Label>
+                </p>
 
             </section>
 
             <section>
                 <article>
-                    <img src="img/tirsdag">
+                    <!-- <img src="img/tirsdag">-->
                 </article>
-                <p>tirsdag</p>
+                <p>Tirsdag</p>
+
+                <p>
+                    Pris:
+                    <asp:Label ID="LabelTirPris" runat="server" Text=""></asp:Label>
+                </p>
+
             </section>
 
             <section>
                 <article>
-                    <img src="img/ondstad.jpg">
+                    <!--<img src="img/ondstad.jpg">-->
                 </article>
-                <p>onsdag</p>
+                <p>Onsdag</p>
+
+                <p>Pris:<asp:Label ID="LabelOnsPris" runat="server" Text=""></asp:Label></p>
+                <br />
+
             </section>
 
             <section>
                 <article>
-                    <img src="img/torsdag - Copy.jfif">
+                    <!--<img src="img/torsdag - Copy.jfif">-->
                 </article>
-                <p>torsdag</p>
+                <p>Torsdag</p>
+
+                <p>Pris:<asp:Label ID="LabelTorPris" runat="server" Text=""></asp:Label></p>
+                <br />
+
             </section>
 
             <section>
                 <article>
-                    <img src="img/fredag.webp">
+                    <!-- <img src="img/fredag.webp">-->
                 </article>
-                <p>fredag</p>
+                <p>Fredag</p>
+
+                <p>Pris:<asp:Label ID="LabelFrePris" runat="server" Text=""></asp:Label></p>
+                <br />
+
+            </section>
+
+        </meny>
+
+        <meny>
+            <section>
             </section>
 
         </meny>
 
 
 
-        
-        <asp:Label ID="LabelTir" runat="server" Text=""></asp:Label>
-        <br />
-        <asp:Label ID="LabelOns" runat="server" Text=""></asp:Label>
-        <br />
-        <asp:Label ID="LabelTor" runat="server" Text=""></asp:Label>
-        <br />
-        <asp:Label ID="LabelFre" runat="server" Text=""></asp:Label>
-        <br />
 
-        <asp:GridView ID="GridView1" runat="server"></asp:GridView>
+
     </form>
     <br />
 

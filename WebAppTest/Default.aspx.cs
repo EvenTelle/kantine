@@ -28,7 +28,9 @@ namespace WebAppTest
                 reader.Close();
                 conn.Close();
             }
-            //LabelMan.Text= dt.Rows[0][0].ToString();//henter ut fra en celle i en rad
+
+
+            //henter ut fra en celle i en rad
             //GridView1.DataSource = dt;
             //GridView1.DataBind();
 
