@@ -14,30 +14,53 @@ namespace WebAppTest
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var connectionString = ConfigurationManager.ConnectionStrings["ConnCms"].ConnectionString;
-            DataTable dt = new DataTable();
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            if (!IsPostBack) // Prevent multiple reloads during postbacks
             {
-                conn.Open();
+                var connectionString = ConfigurationManager.ConnectionStrings["ConnCms"].ConnectionString;
+                DataTable dt = new DataTable();
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
 
-                SqlCommand cmd = new SqlCommand("SELECT * from måltider", conn);
-                cmd.CommandType = CommandType.Text;
+                    // Adjusted query to fetch all columns
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM Meny", conn);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    dt.Load(reader);
+                    reader.Close();
+                }
 
-                SqlDataReader reader = cmd.ExecuteReader();
-                dt.Load(reader);
-                reader.Close();
-                conn.Close();
+               
+                if (dt.Rows.Count > 0)
+                {
+                    var result = new System.Text.StringBuilder();
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        foreach (DataColumn column in dt.Columns)
+                        {
+                            result.Append($"{column.ColumnName}: {row[column]}<br/>");
+                        }
+                        result.Append("<hr/>"); // Separate each row visually
+                    }
+
+                    LabelManPris.Text = result.ToString();
+                }
+                else
+                {
+                    LabelManPris.Text = "No data found.";
+                }
             }
-
-
-            //henter ut fra en celle i en rad
-            //GridView1.DataSource = dt;
-            //GridView1.DataBind();
-
         }
 
-        protected void ButtonSearchLastName_Click(object sender, EventArgs e)
-        {
+
+    }
+
+
+
+
+}
+
+       //protected void ButtonSearchLastName_Click(object sender, EventArgs e)
+       //{
             //SqlParameter param;
             //var connectionString = ConfigurationManager.ConnectionStrings["ConnCms"].ConnectionString;
             //DataTable dt = new DataTable();
@@ -62,10 +85,10 @@ namespace WebAppTest
             //}
             //GridView1.DataSource = dt;
             //GridView1.DataBind();
-        }
+        //}
 
-        protected void ButtonSearchFirstName_Click(object sender, EventArgs e)
-        {
+        //protected void ButtonSearchFirstName_Click(object sender, EventArgs e)
+       //{
             //SqlParameter param;
             //var connectionString = ConfigurationManager.ConnectionStrings["ConnCms"].ConnectionString;
             //DataTable dt = new DataTable();
@@ -90,6 +113,5 @@ namespace WebAppTest
             //}
             //GridView1.DataSource = dt;
             //GridView1.DataBind();
-        }
-    }
-}
+        //}
+    

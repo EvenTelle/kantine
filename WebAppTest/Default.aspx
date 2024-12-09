@@ -102,9 +102,7 @@
                 </article>
                 <p>Mandag</p>
 
-                <p>
-                    Pris:
-                    <asp:Label ID="LabelManPris" runat="server" Text=""></asp:Label>
+                <p>Pris:<asp:Label ID="LabelManPris" runat="server" Text=""></asp:Label>
                 </p>
 
             </section>
@@ -159,13 +157,9 @@
 
         <meny>
             <section>
+
             </section>
-
         </meny>
-
-
-
-
 
     </form>
     <br />
